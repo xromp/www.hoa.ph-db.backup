@@ -41,7 +41,7 @@ CREATE TABLE `collection` (
   `updated_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`collectionid`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,6 +50,7 @@ CREATE TABLE `collection` (
 
 LOCK TABLES `collection` WRITE;
 /*!40000 ALTER TABLE `collection` DISABLE KEYS */;
+INSERT INTO `collection` VALUES (27,'MONTHLYDUES',43,'HOMEOWNER','1','2017-07-02',NULL,NULL,NULL,50.00,'\0','\0','TEST','2017-07-02 21:59:45',NULL,'2017-07-03 04:59:45','2017-07-03 04:59:45');
 /*!40000 ALTER TABLE `collection` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +105,7 @@ CREATE TABLE `collection_line` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`collection_lineid`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,6 +114,7 @@ CREATE TABLE `collection_line` (
 
 LOCK TABLES `collection_line` WRITE;
 /*!40000 ALTER TABLE `collection_line` DISABLE KEYS */;
+INSERT INTO `collection_line` VALUES (63,27,'JAN','2017',NULL,'','2017-07-03 04:59:45','2017-07-03 04:59:45');
 /*!40000 ALTER TABLE `collection_line` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +141,7 @@ CREATE TABLE `expense` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `createdby` int(11) DEFAULT NULL,
   PRIMARY KEY (`expenseid`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,6 +150,7 @@ CREATE TABLE `expense` (
 
 LOCK TABLES `expense` WRITE;
 /*!40000 ALTER TABLE `expense` DISABLE KEYS */;
+INSERT INTO `expense` VALUES (13,'Utilities','LIGHT','1',1,'2017-07-02',100.00,'Meralco','\0','\0','TEST','2017-07-03 04:58:38','2017-07-03 04:58:38',NULL);
 /*!40000 ALTER TABLE `expense` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -167,7 +170,7 @@ CREATE TABLE `expense_category` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `createdby` bit(1) DEFAULT NULL,
   PRIMARY KEY (`expense_categoryid`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,6 +179,7 @@ CREATE TABLE `expense_category` (
 
 LOCK TABLES `expense_category` WRITE;
 /*!40000 ALTER TABLE `expense_category` DISABLE KEYS */;
+INSERT INTO `expense_category` VALUES (10,'Utilities','Utilities','','2017-07-03 04:58:06','2017-07-03 04:58:06',NULL);
 /*!40000 ALTER TABLE `expense_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -196,7 +200,7 @@ CREATE TABLE `expense_category_type` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `createdby` int(11) DEFAULT NULL,
   PRIMARY KEY (`expense_category_typeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -205,6 +209,7 @@ CREATE TABLE `expense_category_type` (
 
 LOCK TABLES `expense_category_type` WRITE;
 /*!40000 ALTER TABLE `expense_category_type` DISABLE KEYS */;
+INSERT INTO `expense_category_type` VALUES (6,'Utilities','LIGHT','Light','','2017-07-03 04:58:28','2017-07-03 04:58:28',NULL);
 /*!40000 ALTER TABLE `expense_category_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +231,7 @@ CREATE TABLE `expense_line` (
   `updated_at` datetime DEFAULT NULL,
   `createdby` int(11) DEFAULT NULL,
   PRIMARY KEY (`expense_lineid`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,6 +240,7 @@ CREATE TABLE `expense_line` (
 
 LOCK TABLES `expense_line` WRITE;
 /*!40000 ALTER TABLE `expense_line` DISABLE KEYS */;
+INSERT INTO `expense_line` VALUES (10,13,NULL,NULL,NULL,'','2017-07-03 04:58:38','2017-07-03 04:58:38',NULL);
 /*!40000 ALTER TABLE `expense_line` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +265,7 @@ CREATE TABLE `person` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
   `createdby` int(11) DEFAULT NULL,
   PRIMARY KEY (`personid`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,6 +274,7 @@ CREATE TABLE `person` (
 
 LOCK TABLES `person` WRITE;
 /*!40000 ALTER TABLE `person` DISABLE KEYS */;
+INSERT INTO `person` VALUES (43,'Penaflor','Rommel',NULL,'HOMEOWNER','','\0','2017-07-03','2099-12-31','2017-07-03 04:41:24','2017-07-03 04:41:24',1);
 /*!40000 ALTER TABLE `person` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -292,7 +299,7 @@ CREATE TABLE `person_profile` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`person_profileid`)
-) ENGINE=InnoDB AUTO_INCREMENT=673 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=692 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -301,6 +308,7 @@ CREATE TABLE `person_profile` (
 
 LOCK TABLES `person_profile` WRITE;
 /*!40000 ALTER TABLE `person_profile` DISABLE KEYS */;
+INSERT INTO `person_profile` VALUES (673,43,'STATUS','Civil Status','SINGLE','01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(674,43,'GENDER','Gender',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(675,43,'BIRTHDAY','Birthday',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(676,43,'ADDRESS_STREET','Address Street','599 Boni','01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(677,43,'ADDRESS_CITY','Address City','Mandaluyong','01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(678,43,'ADDRESS_PROVINCE','Address City','Manila','01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(679,43,'CONTACT_MOBILENO','Mobile No.',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(680,43,'CONTACT_TELEPHONENO','Telephone No.',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(681,43,'EMAIL','Email',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(682,43,'YEAR_MOVED','Year moved to Green Ridge',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:24','2017-07-03 04:41:24'),(683,43,'REPRESENTATIVE','Authorized Representative',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(684,43,'REPRESENTATIVE_RELATIONSHIP','Authorized Representative Relationship.',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(685,43,'REPRESENTATIVE_CONTACTNO','Authorized Representative Contact No.',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(686,43,'WIFE_LNAME','Wife lastname',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(687,43,'WIFE_FNAME','Wife firstname',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(688,43,'WIFE_MNAME','Wife middlename',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(689,43,'WIFE_BIRTHDAY','Birthday',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(690,43,'WIFE_CONTACT_MOBILENO','Mobile No.',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25'),(691,43,'WIFE_EMAIL','Email',NULL,'01','','2017-07-03','2099-12-31',1,'2017-07-03 04:41:25','2017-07-03 04:41:25');
 /*!40000 ALTER TABLE `person_profile` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -377,4 +385,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-02 18:21:16
+-- Dump completed on 2017-07-02 22:00:17
